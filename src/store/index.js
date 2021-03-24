@@ -19,10 +19,15 @@ export const store = new Vuex.Store({
             let books = state.books.map(book => {
                 return {
                     name: `*** ${book.name} ***`,
-                    price: book.price / 3
+                    price: book.price / 2
                 }
             })
             return books;
+        }
+    },
+    mutations: {
+        reducePrice: (state) => {
+            state.books.forEach(book => book.price -= 10)
         }
     }
 })

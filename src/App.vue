@@ -7,6 +7,7 @@
 </template>
 
 <script>
+import { mapActions } from "vuex"
 import compBookListOne from "./components/BookListOne"
 import compBookListTwo from "./components/BookListTwo"
 export default {
@@ -20,9 +21,12 @@ export default {
       compBookListTwo
     },
     methods: {
-        reducePrice(){
-            this.$store.dispatch("reducePrice");
-        }
+        // reducePrice(){
+        //     this.$store.dispatch("reducePrice");
+        // },
+        ...mapActions([
+            "reducePrice"
+        ])
     }
 }
 </script>

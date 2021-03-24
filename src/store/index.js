@@ -29,5 +29,10 @@ export const store = new Vuex.Store({
         reducePrice: (state) => {
             state.books.forEach(book => book.price -= 10)
         }
+    },
+    actions: {
+        reducePrice: (context) => {
+            context.commit("reducePrice");
+        }
     }
 })
